@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Jira Tunado
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.2
 // @author       José Tissei <z.94@live.com>
-// @match        https://jira.*.com.br/secure/RapidBoard.jspa*
+// @match        https://jira.hbsis.com.br/secure/RapidBoard.jspa*
 // @grant        GM_addStyle
 // @grant        GM_getResourceText
 // @require https://code.jquery.com/jquery-2.1.4.min.js
@@ -41,11 +41,12 @@ $('#ghx-view-presentation').html($('#ghx-view-presentation').html() + `<button c
         $('#ghx-pool').css({'padding-top':'0px'});
         $('#ghx-operations').remove();
         $('#ghx-column-header-group').attr('style', '');
-        $('.ghx-column-headers .ghx-column h2').css({'font-size':'30px'});
+        $('.ghx-column-headers .ghx-column h2').css({'font-size':'25px'});
         var historiasComSubTarefas = $('.ghx-swimlane').filter((index, value) => $(value).children('div[data-issue-id]').length != 0);
         var board = $('.ghx-swimlane').filter((index, value) => $(value).children('div[data-issue-id]').length == 0).find('.ghx-column');
         var colunas = {};
         colunas['Não Iniciado'] = board.get(0);
+        colunas['Para Fazer'] = board.get(0);
         colunas['Aguardando Dev'] = board.get(0);
         colunas['Impedimento'] = board.get(4);
         colunas['Em análise'] = board.get(0);
@@ -98,6 +99,6 @@ $('#ghx-view-presentation').html($('#ghx-view-presentation').html() + `<button c
         $('.ghx-column-headers .ghx-column h2').each((index, value) => {
             value.innerHTML += `<span class="aui-label ghx-label-4">`+$(board.get(index)).find('.js-detailview').length+`</span>`
         });
-        $('.ghx-column-headers .ghx-column h2 span').css({'font-size':'25px', 'margin-left':'10px'});
+        $('.ghx-column-headers .ghx-column h2 span').css({'font-size':'20px', 'margin-left':'10px'});
     });
 })();
