@@ -1,9 +1,11 @@
 // ==UserScript==
 // @name         Jira Tunado
 // @namespace    http://tampermonkey.net/
-// @version      0.2
+// @version      0.3
 // @author       José Tissei <z.94@live.com>
-// @match        https://jira.hbsis.com.br/secure/RapidBoard.jspa*
+// @match        https://jira.hbsis.com.br/secure/RapidBoard.jspa?rapidView=10664
+// @match        https://jira.hbsis.com.br/secure/RapidBoard.jspa?rapidView=10761*
+// @match        https://jira.hbsis.com.br/secure/RapidBoard.jspa?rapidView=10761
 // @grant        GM_addStyle
 // @grant        GM_getResourceText
 // @require https://code.jquery.com/jquery-2.1.4.min.js
@@ -54,6 +56,7 @@ $('#ghx-view-presentation').html($('#ghx-view-presentation').html() + `<button c
         colunas['Aguardando Validação'] = board.get(5);
         colunas['Homologado'] = board.get(5);
         colunas['Em Progresso'] = board.get(1);
+                colunas['Em progresso'] = board.get(1);
         colunas['Aguardando Testes'] = board.get(2);
         colunas['Em Testes'] = board.get(3);
         colunas['Em piloto'] = board.get(5);
