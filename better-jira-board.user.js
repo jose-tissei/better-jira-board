@@ -1,11 +1,9 @@
 // ==UserScript==
 // @name         Jira Tunado
 // @namespace    http://tampermonkey.net/
-// @version      0.3
+// @version      0.4
 // @author       José Tissei <z.94@live.com>
-// @match        https://jira.hbsis.com.br/secure/RapidBoard.jspa?rapidView=10664
-// @match        https://jira.hbsis.com.br/secure/RapidBoard.jspa?rapidView=10761*
-// @match        https://jira.hbsis.com.br/secure/RapidBoard.jspa?rapidView=10761
+// @match        https://jira.hbsis.com.br/secure/RapidBoard.jspa?rapidView=*
 // @grant        GM_addStyle
 // @grant        GM_getResourceText
 // @require https://code.jquery.com/jquery-2.1.4.min.js
